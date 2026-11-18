@@ -1,0 +1,2333 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>橫濱港行旅記 · 冰川丸號 · 開港街區 · 紅磚倉庫</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600&family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ============================================================
+       橫濱港行旅記 — 海洋風味典雅攝影瀏覽網頁（單檔離線版）
+       Palette: Sea-Salt Ivory, Pacific Navy, Harbor Mist, Antique Brass
+       ============================================================ */
+    :root {
+      --bg-canvas: #F5F7FA;
+      --bg-paper: #FFFFFF;
+      --bg-mist: #EAF1F6;
+      --bg-navy: #0F273E;
+      --bg-navy-deep: #0A1B2C;
+
+      --ink-primary: #142B42;
+      --ink-secondary: #486078;
+      --ink-muted: #768B9E;
+
+      --ocean-main: #1E4E74;
+      --ocean-soft: #DCE8F2;
+      --brass: #B08A4E;
+      --brass-soft: #F5EFE4;
+      --brick: #9E4738;
+
+      --border-subtle: rgba(16, 42, 67, 0.09);
+      --border-mid: rgba(16, 42, 67, 0.16);
+      --shadow-soft: 0 10px 30px rgba(15, 39, 62, 0.06);
+      --shadow-hover: 0 18px 42px rgba(15, 39, 62, 0.12);
+      --shadow-modal: 0 28px 80px rgba(8, 22, 36, 0.35);
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-pill: 999px;
+
+      --font-serif: "Noto Serif TC", "Songti TC", "STSong", "Source Han Serif TC", "PMingLiU", Georgia, serif;
+      --font-sans: "Noto Sans TC", "PingFang TC", "Hiragino Sans CNS", "Microsoft JhengHei", -apple-system, BlinkMacSystemFont, sans-serif;
+
+      --max-width: 1200px;
+      --transition: 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    body {
+      margin: 0;
+      background-color: var(--bg-canvas);
+      color: var(--ink-primary);
+      font-family: var(--font-sans);
+      line-height: 1.78;
+      overflow-x: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      image-orientation: from-image;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    /* Sticky Navigation Bar */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 90;
+      background: rgba(250, 252, 254, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: box-shadow var(--transition);
+    }
+
+    .site-nav.scrolled {
+      box-shadow: 0 6px 24px rgba(15, 39, 62, 0.06);
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 12px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--ink-primary);
+      flex-shrink: 0;
+    }
+
+    .nav-compass {
+      width: 26px;
+      height: 26px;
+      color: var(--ocean-main);
+    }
+
+    .nav-brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+
+    .nav-brand-title {
+      font-family: var(--font-serif);
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+    }
+
+    .nav-brand-sub {
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      color: var(--ink-muted);
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--ink-secondary);
+      font-size: 14px;
+      font-weight: 500;
+      padding: 7px 14px;
+      border-radius: var(--radius-pill);
+      transition: background var(--transition), color var(--transition);
+      white-space: nowrap;
+    }
+
+    .nav-link:hover {
+      background: var(--bg-mist);
+      color: var(--ink-primary);
+    }
+
+    .nav-link.active {
+      background: var(--bg-navy);
+      color: #FFFFFF;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .view-toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-mid);
+      background: var(--bg-paper);
+      color: var(--ink-primary);
+      font-size: 13px;
+      font-weight: 500;
+      transition: all var(--transition);
+    }
+
+    .view-toggle-btn:hover {
+      border-color: var(--ocean-main);
+      color: var(--ocean-main);
+      background: var(--bg-mist);
+    }
+
+    .view-toggle-btn.is-gallery {
+      background: var(--ocean-main);
+      border-color: var(--ocean-main);
+      color: #FFFFFF;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      min-height: 78vh;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      background-color: var(--bg-navy-deep);
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 48%;
+      transform: scale(1.02);
+      filter: saturate(0.95) contrast(1.03);
+    }
+
+    .hero-veil {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(10, 27, 44, 0.68) 0%, rgba(10, 27, 44, 0.32) 52%, rgba(10, 27, 44, 0.08) 100%),
+        linear-gradient(180deg, rgba(10, 27, 44, 0.28) 0%, rgba(10, 27, 44, 0.22) 38%, rgba(10, 27, 44, 0.80) 86%, rgba(10, 27, 44, 0.94) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: var(--max-width);
+      padding: 96px 28px 68px;
+      color: #FFFFFF;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      color: rgba(255, 255, 255, 0.88);
+      margin-bottom: 18px;
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      background: rgba(10, 27, 44, 0.36);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #DFBA7C;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(34px, 5.2vw, 58px);
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      margin: 0 0 14px;
+      line-height: 1.2;
+      text-shadow: 0 4px 20px rgba(8, 22, 36, 0.45);
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-serif);
+      font-size: clamp(16px, 2.2vw, 22px);
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      color: #EBD2A3;
+      margin: 0 0 24px;
+      text-shadow: 0 2px 12px rgba(8, 22, 36, 0.5);
+    }
+
+    .hero-lead {
+      max-width: 640px;
+      font-size: 15.5px;
+      line-height: 1.92;
+      color: rgba(246, 250, 254, 0.94);
+      margin: 0 0 34px;
+      font-weight: 400;
+      text-shadow: 0 2px 14px rgba(8, 22, 36, 0.55);
+    }
+
+    .hero-footer-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .hero-chapter-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: var(--radius-pill);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      color: #FFFFFF;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(8px);
+      transition: all var(--transition);
+    }
+
+    .hero-pill:hover {
+      background: #FFFFFF;
+      color: var(--bg-navy);
+      transform: translateY(-2px);
+    }
+
+    .hero-pill-num {
+      font-family: var(--font-serif);
+      font-size: 12px;
+      color: #E2C693;
+    }
+
+    .hero-pill:hover .hero-pill-num {
+      color: var(--brass);
+    }
+
+    .hero-stats {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 13px;
+      color: rgba(235, 243, 250, 0.82);
+      letter-spacing: 0.06em;
+    }
+
+    .wave-edge {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 36px;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    /* Quick Landmark Overview Strip */
+    .overview-band {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 52px 28px 18px;
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .overview-card {
+      background: var(--bg-paper);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 22px 24px;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+
+    .overview-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--border-mid);
+    }
+
+    .overview-card-top {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .overview-num {
+      font-family: var(--font-serif);
+      font-size: 13px;
+      color: var(--brass);
+      letter-spacing: 0.14em;
+      font-weight: 600;
+    }
+
+    .overview-count {
+      font-size: 12px;
+      color: var(--ink-muted);
+      background: var(--bg-mist);
+      padding: 3px 10px;
+      border-radius: var(--radius-pill);
+    }
+
+    .overview-card h3 {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      margin: 4px 0 4px;
+      color: var(--ink-primary);
+      letter-spacing: 0.04em;
+    }
+
+    .overview-card-sub {
+      font-size: 12px;
+      color: var(--ink-muted);
+      letter-spacing: 0.08em;
+      margin: 0 0 8px;
+    }
+
+    .overview-card-desc {
+      font-size: 13.5px;
+      color: var(--ink-secondary);
+      margin: 0;
+      line-height: 1.72;
+    }
+
+    .overview-card-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding-top: 8px;
+      border-top: 1px dashed var(--border-subtle);
+    }
+
+    .mini-action-btn {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      border: 1px solid var(--border-mid);
+      background: var(--bg-paper);
+      color: var(--ink-primary);
+      transition: all var(--transition);
+    }
+
+    .mini-action-btn:hover {
+      background: var(--bg-mist);
+      border-color: var(--ocean-main);
+      color: var(--ocean-main);
+    }
+
+    .mini-action-btn.primary {
+      background: var(--bg-navy);
+      border-color: var(--bg-navy);
+      color: #FFFFFF;
+    }
+
+    .mini-action-btn.primary:hover {
+      background: var(--ocean-main);
+      border-color: var(--ocean-main);
+      color: #FFFFFF;
+    }
+
+    /* Chapter Sections */
+    .chapter-section {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 64px 28px 40px;
+      scroll-margin-top: 68px;
+    }
+
+    .chapter-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin: 12px auto 0;
+      max-width: var(--max-width);
+      padding: 0 28px;
+      color: var(--ink-muted);
+      opacity: 0.55;
+    }
+
+    .chapter-divider-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-mid), transparent);
+    }
+
+    .chapter-header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px 36px;
+      align-items: end;
+      margin-bottom: 28px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .chapter-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      color: var(--brass);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .chapter-title {
+      font-family: var(--font-serif);
+      font-size: clamp(26px, 3.6vw, 38px);
+      font-weight: 600;
+      color: var(--ink-primary);
+      margin: 0 0 8px;
+      letter-spacing: 0.06em;
+      line-height: 1.25;
+    }
+
+    .chapter-jp {
+      font-size: 13.5px;
+      color: var(--ink-muted);
+      letter-spacing: 0.12em;
+      margin: 0 0 14px;
+    }
+
+    .chapter-summary {
+      max-width: 720px;
+      font-size: 15px;
+      color: var(--ink-secondary);
+      margin: 0;
+      line-height: 1.86;
+    }
+
+    .chapter-meta-box {
+      text-align: right;
+      font-size: 13px;
+      color: var(--ink-muted);
+      line-height: 1.8;
+      white-space: nowrap;
+    }
+
+    .chapter-meta-box strong {
+      display: block;
+      color: var(--ink-primary);
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    /* Knowledge Buttons Bar */
+    .guide-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      background: linear-gradient(135deg, #FFFFFF 0%, #EEF4F9 100%);
+      border: 1px solid rgba(30, 78, 116, 0.14);
+      border-radius: var(--radius-md);
+      padding: 16px 22px;
+      margin-bottom: 34px;
+      box-shadow: 0 4px 16px rgba(15, 39, 62, 0.04);
+    }
+
+    .guide-bar-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--ink-primary);
+      letter-spacing: 0.04em;
+    }
+
+    .guide-bar-label span.sub-hint {
+      font-weight: 400;
+      color: var(--ink-muted);
+      font-size: 12.5px;
+    }
+
+    .guide-btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .guide-topic-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 17px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(30, 78, 116, 0.22);
+      background: var(--bg-paper);
+      color: var(--ink-primary);
+      font-size: 13.5px;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      box-shadow: 0 2px 6px rgba(15, 39, 62, 0.04);
+      transition: all var(--transition);
+    }
+
+    .guide-topic-btn svg {
+      width: 15px;
+      height: 15px;
+      color: var(--ocean-main);
+      transition: color var(--transition);
+    }
+
+    .guide-topic-btn:hover {
+      background: var(--bg-navy);
+      border-color: var(--bg-navy);
+      color: #FFFFFF;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(15, 39, 62, 0.16);
+    }
+
+    .guide-topic-btn:hover svg {
+      color: #E2C693;
+    }
+
+    /* Photo-First Editorial Layout */
+    .featured-photo-wrap {
+      margin-bottom: 28px;
+    }
+
+    .photo-card {
+      background: var(--bg-paper);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-soft);
+      transition: transform var(--transition), box-shadow var(--transition);
+      break-inside: avoid;
+      margin-bottom: 26px;
+    }
+
+    .photo-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .photo-card.is-featured {
+      display: grid;
+      grid-template-columns: 1.55fr 1fr;
+      align-items: stretch;
+      margin-bottom: 0;
+    }
+
+    .photo-frame {
+      position: relative;
+      overflow: hidden;
+      background: #E6EDF3;
+      cursor: zoom-in;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .photo-card.is-featured .photo-frame img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .photo-card:hover .photo-frame img {
+      transform: scale(1.028);
+    }
+
+    .photo-zoom-badge {
+      position: absolute;
+      right: 14px;
+      bottom: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 6px 12px;
+      border-radius: var(--radius-pill);
+      background: rgba(10, 27, 44, 0.68);
+      color: #FFFFFF;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      backdrop-filter: blur(6px);
+      opacity: 0;
+      transform: translateY(4px);
+      transition: opacity var(--transition), transform var(--transition);
+      pointer-events: none;
+    }
+
+    .photo-card:hover .photo-zoom-badge {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .photo-time-pill {
+      position: absolute;
+      left: 14px;
+      top: 14px;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background: rgba(10, 27, 44, 0.56);
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 11.5px;
+      letter-spacing: 0.08em;
+      backdrop-filter: blur(6px);
+      pointer-events: none;
+    }
+
+    .photo-body {
+      padding: 20px 24px 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .photo-card.is-featured .photo-body {
+      padding: 32px 34px;
+      background: linear-gradient(180deg, #FFFFFF 0%, #FAFBFD 100%);
+    }
+
+    .photo-index {
+      font-family: var(--font-serif);
+      font-size: 12px;
+      color: var(--brass);
+      letter-spacing: 0.14em;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .photo-title {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--ink-primary);
+      margin: 0 0 10px;
+      line-height: 1.4;
+      letter-spacing: 0.03em;
+    }
+
+    .photo-card.is-featured .photo-title {
+      font-size: 22px;
+      margin-bottom: 14px;
+    }
+
+    .photo-caption {
+      font-size: 14px;
+      color: var(--ink-secondary);
+      margin: 0;
+      line-height: 1.88;
+      text-align: justify;
+    }
+
+    .photo-card.is-featured .photo-caption {
+      font-size: 14.8px;
+      line-height: 1.96;
+    }
+
+    .photo-masonry {
+      column-count: 2;
+      column-gap: 26px;
+    }
+
+    /* Pure Gallery Mode */
+    body.gallery-only .photo-card.is-featured {
+      display: block;
+    }
+
+    body.gallery-only .photo-card.is-featured .photo-frame img {
+      height: auto;
+    }
+
+    body.gallery-only .photo-masonry {
+      column-count: 3;
+      column-gap: 18px;
+    }
+
+    body.gallery-only .photo-card {
+      margin-bottom: 18px;
+      border-radius: var(--radius-sm);
+    }
+
+    body.gallery-only .photo-body {
+      padding: 12px 15px 14px;
+    }
+
+    body.gallery-only .photo-caption {
+      display: none;
+    }
+
+    body.gallery-only .photo-title {
+      font-size: 14.5px;
+      margin-bottom: 0;
+    }
+
+    body.gallery-only .photo-index {
+      margin-bottom: 3px;
+      font-size: 11px;
+    }
+
+    /* Landmark Deep-Dive Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(10, 25, 41, 0.62);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.26s ease, visibility 0.26s ease;
+    }
+
+    .modal-backdrop.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .guide-modal {
+      width: 100%;
+      max-width: 780px;
+      max-height: 88vh;
+      background: var(--bg-paper);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-modal);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transform: translateY(18px) scale(0.98);
+      transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .modal-backdrop.open .guide-modal {
+      transform: translateY(0) scale(1);
+    }
+
+    .guide-modal-header {
+      background: linear-gradient(135deg, var(--bg-navy) 0%, #1C486C 100%);
+      color: #FFFFFF;
+      padding: 26px 32px 20px;
+      position: relative;
+    }
+
+    .guide-modal-top-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .guide-modal-kicker {
+      font-size: 11.5px;
+      letter-spacing: 0.2em;
+      color: #E2C693;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .guide-modal-title {
+      font-family: var(--font-serif);
+      font-size: 26px;
+      font-weight: 600;
+      margin: 0 0 4px;
+      letter-spacing: 0.06em;
+    }
+
+    .guide-modal-jp {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.72);
+      letter-spacing: 0.1em;
+      margin: 0;
+    }
+
+    .modal-close-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.1);
+      color: #FFFFFF;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background var(--transition), transform var(--transition);
+    }
+
+    .modal-close-btn:hover {
+      background: rgba(255, 255, 255, 0.22);
+      transform: rotate(90deg);
+    }
+
+    .modal-place-switcher {
+      display: flex;
+      gap: 8px;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
+
+    .place-switch-pill {
+      padding: 5px 13px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: transparent;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 12.5px;
+      transition: all var(--transition);
+    }
+
+    .place-switch-pill:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #FFFFFF;
+    }
+
+    .place-switch-pill.active {
+      background: rgba(255, 255, 255, 0.94);
+      color: var(--bg-navy);
+      border-color: transparent;
+      font-weight: 600;
+    }
+
+    .guide-tabs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: var(--bg-mist);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .guide-tab {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 14px 10px;
+      border: none;
+      background: transparent;
+      color: var(--ink-secondary);
+      font-size: 14px;
+      font-weight: 500;
+      border-bottom: 2.5px solid transparent;
+      transition: all var(--transition);
+    }
+
+    .guide-tab svg {
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
+    }
+
+    .guide-tab:hover {
+      color: var(--ink-primary);
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    .guide-tab.active {
+      background: var(--bg-paper);
+      color: var(--ocean-main);
+      font-weight: 600;
+      border-bottom-color: var(--ocean-main);
+    }
+
+    .guide-modal-body {
+      padding: 28px 32px 32px;
+      overflow-y: auto;
+    }
+
+    .guide-topic-heading {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--ink-primary);
+      margin: 0 0 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .guide-topic-heading::before {
+      content: "";
+      width: 4px;
+      height: 20px;
+      border-radius: 2px;
+      background: var(--brass);
+    }
+
+    .guide-highlights {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .highlight-chip {
+      background: var(--bg-canvas);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+    }
+
+    .highlight-chip-k {
+      font-size: 11.5px;
+      color: var(--ink-muted);
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+    }
+
+    .highlight-chip-v {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--ink-primary);
+      line-height: 1.4;
+    }
+
+    .guide-paragraphs p {
+      font-size: 15.5px;
+      line-height: 1.96;
+      color: var(--ink-secondary);
+      margin: 0 0 16px;
+      text-align: justify;
+    }
+
+    .guide-paragraphs p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Full-Screen Photo Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 300;
+      background: rgba(8, 19, 31, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+
+    .lightbox.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .lightbox-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 26px;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 13.5px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+    }
+
+    .lightbox-stage {
+      flex: 1;
+      min-height: 0;
+      display: grid;
+      grid-template-columns: 64px 1fr 340px 64px;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 16px;
+    }
+
+    .lightbox-nav-btn {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.07);
+      color: #FFFFFF;
+      font-size: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition);
+    }
+
+    .lightbox-nav-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.06);
+    }
+
+    .lightbox-img-wrap {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 0;
+    }
+
+    .lightbox-img-wrap img {
+      max-height: 78vh;
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.55);
+    }
+
+    .lightbox-info {
+      color: #FFFFFF;
+      padding: 22px 24px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-md);
+      max-height: 76vh;
+      overflow-y: auto;
+    }
+
+    .lightbox-tag {
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      color: #E2C693;
+      margin-bottom: 10px;
+    }
+
+    .lightbox-title {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 600;
+      margin: 0 0 14px;
+      line-height: 1.4;
+    }
+
+    .lightbox-caption {
+      font-size: 14.5px;
+      line-height: 1.92;
+      color: rgba(235, 243, 250, 0.88);
+      margin: 0 0 20px;
+      text-align: justify;
+    }
+
+    .lightbox-meta {
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      font-size: 12.5px;
+      color: rgba(255, 255, 255, 0.62);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* Footer */
+    .site-footer {
+      margin-top: 72px;
+      background: var(--bg-navy);
+      color: rgba(235, 243, 250, 0.8);
+      padding: 48px 28px;
+      text-align: center;
+    }
+
+    .footer-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .footer-title {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      letter-spacing: 0.14em;
+      color: #FFFFFF;
+      margin: 12px 0 8px;
+    }
+
+    .footer-text {
+      font-size: 13.5px;
+      line-height: 1.88;
+      color: rgba(220, 232, 244, 0.74);
+      margin: 0 0 20px;
+    }
+
+    .back-top-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 18px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: transparent;
+      color: #FFFFFF;
+      font-size: 13px;
+      text-decoration: none;
+      transition: all var(--transition);
+    }
+
+    .back-top-btn:hover {
+      background: #FFFFFF;
+      color: var(--bg-navy);
+    }
+
+    /* Responsive Refinements */
+    @media (max-width: 980px) {
+      .overview-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-card.is-featured {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-card.is-featured .photo-frame img {
+        height: auto;
+      }
+
+      .chapter-header {
+        grid-template-columns: 1fr;
+      }
+
+      .chapter-meta-box {
+        text-align: left;
+      }
+
+      .lightbox-stage {
+        grid-template-columns: 44px 1fr 44px;
+        grid-template-rows: 1fr auto;
+        padding: 12px;
+      }
+
+      .lightbox-img-wrap img {
+        max-height: 55vh;
+      }
+
+      .lightbox-info {
+        grid-column: 1 / -1;
+        max-height: 26vh;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-inner {
+        padding: 10px 16px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero-content {
+        padding: 72px 18px 54px;
+      }
+
+      .overview-band,
+      .chapter-section {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .photo-masonry,
+      body.gallery-only .photo-masonry {
+        column-count: 1;
+      }
+
+      .guide-highlights {
+        grid-template-columns: 1fr;
+      }
+
+      .guide-tabs {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .guide-modal-header,
+      .guide-modal-body {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body id="top">
+  <!-- Sticky Maritime Navigation -->
+  <nav class="site-nav" id="site-nav" aria-label="主導覽列">
+    <div class="nav-inner">
+      <a href="#top" class="nav-brand">
+        <svg class="nav-compass" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+          <circle cx="14" cy="14" r="11.5" />
+          <polygon points="18.6 9.4 15.8 15.8 9.4 18.6 12.2 12.2 18.6 9.4" fill="rgba(176,138,78,0.22)" />
+          <circle cx="14" cy="14" r="1.4" fill="currentColor" />
+        </svg>
+        <span class="nav-brand-text">
+          <span class="nav-brand-title">橫濱港行旅記</span>
+          <span class="nav-brand-sub">YOKOHAMA HARBOR LOG</span>
+        </span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#top" class="nav-link active" data-target="top">總覽</a>
+        <a href="#section-hikawamaru" class="nav-link" data-target="hikawamaru">壹 · 冰川丸號</a>
+        <a href="#section-port" class="nav-link" data-target="port">貳 · 橫濱港區</a>
+        <a href="#section-redbrick" class="nav-link" data-target="redbrick">參 · 紅磚倉庫</a>
+      </div>
+
+      <div class="nav-actions">
+        <button type="button" class="view-toggle-btn" id="view-toggle-btn" title="切換圖文雅覽與純圖畫廊模式">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <rect x="3" y="3" width="7" height="7" rx="1" />
+            <rect x="14" y="3" width="7" height="7" rx="1" />
+            <rect x="3" y="14" width="7" height="7" rx="1" />
+            <rect x="14" y="14" width="7" height="7" rx="1" />
+          </svg>
+          <span id="view-toggle-label">純圖畫廊模式</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Full-Bleed Ocean Hero -->
+  <header class="hero">
+    <img
+      src="photos/hikawamaru/hikawamaru_02_IMG_1622.jpg"
+      alt="停泊於橫濱山下公園前的日本郵船冰川丸號"
+      class="hero-bg"
+    />
+    <div class="hero-veil" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="hero-dot"></span>
+        <span>2026年6月2日 · 橫濱開港紀念日</span>
+        <span>·</span>
+        <span>35°26′40″N · 139°39′02″E</span>
+      </div>
+
+      <h1 class="hero-title">橫濱港行旅記</h1>
+      <p class="hero-subtitle">冰川丸號 · 開港街區 · 紅磚倉庫</p>
+      <p class="hero-lead">
+        一場沿東京灣畔緩緩展開的橫濱漫步：自山下公園棧橋上的百年遠洋郵輪「冰川丸號」啟程，穿行於新格蘭德飯店、舊英國七番館、海岸通彩繪地磚與「皇后之塔」交織的開港歷史街區，在「紅磚倉庫」品嚐一席莓果櫻桃午後茶，最終於6月2日橫濱開港祭的雨夜煙火中璀璨收官。
+      </p>
+
+      <div class="hero-footer-bar">
+        <div class="hero-chapter-pills">
+          <a href="#section-hikawamaru" class="hero-pill">
+            <span class="hero-pill-num">01</span>
+            <span>冰川丸號</span>
+          </a>
+          <a href="#section-port" class="hero-pill">
+            <span class="hero-pill-num">02</span>
+            <span>橫濱港區</span>
+          </a>
+          <a href="#section-redbrick" class="hero-pill">
+            <span class="hero-pill-num">03</span>
+            <span>紅磚倉庫</span>
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <span>收錄實拍 33 幀</span>
+          <span>·</span>
+          <span>三處地標深度導覽</span>
+        </div>
+      </div>
+    </div>
+
+    <svg class="wave-edge" viewBox="0 0 1440 36" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,18 C240,36 480,0 720,18 C960,36 1200,0 1440,18 L1440,36 L0,36 Z" fill="#F5F7FA" />
+    </svg>
+  </header>
+
+  <!-- Three Landmarks Overview -->
+  <section class="overview-band" aria-label="三處地標速覽">
+    <div class="overview-grid" id="overview-grid"></div>
+  </section>
+
+  <!-- Main Photo-First Chapters -->
+  <main id="chapters-root"></main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <svg width="34" height="34" viewBox="0 0 28 28" fill="none" stroke="#E2C693" stroke-width="1.4" aria-hidden="true">
+        <circle cx="14" cy="14" r="11.5" />
+        <polygon points="18.6 9.4 15.8 15.8 9.4 18.6 12.2 12.2 18.6 9.4" fill="rgba(226,198,147,0.18)" />
+      </svg>
+      <h2 class="footer-title">橫濱港行旅記</h2>
+      <p class="footer-text">
+        依橫濱實地拍攝檔案整理編排，收錄冰川丸號（10幀）、橫濱港區與開港祭花火（17幀）、紅磚倉庫（6幀）共33幀影像與現場圖說，並附三處地標歷史、地理、人文與景觀深度導覽。
+      </p>
+      <a href="#top" class="back-top-btn">↑ 返回頂部</a>
+    </div>
+  </footer>
+
+  <!-- Landmark Deep-Dive Modal -->
+  <div class="modal-backdrop" id="guide-backdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="guide-modal-title">
+    <div class="guide-modal">
+      <div class="guide-modal-header">
+        <div class="guide-modal-top-row">
+          <div>
+            <div class="guide-modal-kicker" id="guide-modal-kicker"></div>
+            <h3 class="guide-modal-title" id="guide-modal-title"></h3>
+            <p class="guide-modal-jp" id="guide-modal-jp"></p>
+          </div>
+          <button type="button" class="modal-close-btn" id="guide-close-btn" aria-label="關閉導覽視窗">&times;</button>
+        </div>
+        <div class="modal-place-switcher" id="modal-place-switcher" aria-label="切換地標"></div>
+      </div>
+
+      <div class="guide-tabs" id="guide-tabs" role="tablist"></div>
+
+      <div class="guide-modal-body" id="guide-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Full-Screen Photo Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="大圖瀏覽">
+    <div class="lightbox-topbar">
+      <span id="lightbox-counter"></span>
+      <button type="button" class="modal-close-btn" id="lightbox-close-btn" aria-label="關閉大圖">&times;</button>
+    </div>
+
+    <div class="lightbox-stage">
+      <button type="button" class="lightbox-nav-btn" id="lightbox-prev" aria-label="上一張">&#8249;</button>
+
+      <div class="lightbox-img-wrap">
+        <img id="lightbox-img" src="" alt="" />
+      </div>
+
+      <aside class="lightbox-info">
+        <div class="lightbox-tag" id="lightbox-tag"></div>
+        <h3 class="lightbox-title" id="lightbox-title"></h3>
+        <p class="lightbox-caption" id="lightbox-caption"></p>
+        <div class="lightbox-meta">
+          <span id="lightbox-time"></span>
+          <span id="lightbox-order"></span>
+        </div>
+      </aside>
+
+      <button type="button" class="lightbox-nav-btn" id="lightbox-next" aria-label="下一張">&#8250;</button>
+    </div>
+  </div>
+
+  <script>
+    const YOKOHAMA_DATA = {
+      sections: [
+        {
+          id: "hikawamaru",
+          roman: "壹",
+          number: "01",
+          title: "冰川丸號",
+          enTitle: "NYK HIKAWA MARU",
+          jpTitle: "日本郵船氷川丸",
+          timeRange: "15:54 — 16:45",
+          locationTag: "山下公園前棧橋",
+          summary:
+            "1930年誕生的太平洋遠洋貨客船，日本戰前大型客輪中唯一完整留存至今的國家重要文化財。漫步其裝飾藝術風格客艙與露天木甲板，彷彿仍能聽見橫渡太平洋兩百餘航次的汽笛迴響。",
+          guide: {
+            history: {
+              label: "歷史沿革",
+              subtitle: "從太平洋女王到國家重要文化財",
+              highlights: [
+                { k: "竣工年份", v: "1930年（昭和5年）" },
+                { k: "跨洋航次", v: "橫渡太平洋 254 次" },
+                { k: "文化地位", v: "2016年 日本重要文化財" }
+              ],
+              paragraphs: [
+                "冰川丸號由橫濱船渠（現三菱重工）於1930年4月建成，總噸位11,622噸、全長163.3公尺，是日本郵船（NYK）為太平洋西雅圖航線打造的旗艦級豪華貨客船。船名取自埼玉縣大宮的「冰川神社」，駕駛台至今仍供奉著神社神龕。",
+                "在長達30年的服役生涯中，冰川丸共完成254次太平洋橫渡，載運旅客逾2.5萬人次，包含1932年訪日的喜劇大師查理·卓別林。太平洋戰爭期間，它被徵用為海軍特設醫院船，先後三次觸雷仍奇蹟生還，戰後承擔海外僑民接返任務，並重返西雅圖客運航線，直至1960年退役。",
+                "1961年起，冰川丸永久停泊於故鄉橫濱的山下公園前對外開放。2016年，因其完整保留戰前造船工藝與室內裝飾，獲日本政府正式指定為國家「重要文化財」。"
+              ]
+            },
+            geography: {
+              label: "地理位置",
+              subtitle: "東京灣西岸 · 山下公園海濱中軸",
+              highlights: [
+                { k: "所在方位", v: "橫濱市中區山下町" },
+                { k: "臨接海域", v: "橫濱港內港（東京灣）" },
+                { k: "鄰近地標", v: "白燈台 · 橫濱海灣大橋" }
+              ],
+              paragraphs: [
+                "冰川丸停泊於橫濱市中區山下公園東側棧橋外，面朝開闊的橫濱港內港與東京灣。此地水深港闊、風浪平緩，自1859年橫濱開港以來便是遠洋巨輪停靠與海運往來的門戶海域。",
+                "站在船首甲板向東北方遠眺，橫濱海灣大橋（Yokohama Bay Bridge）的雙塔斜張索橫跨海面；近岸棧橋南端矗立著1896年建成的明治「白燈台」（原山下碼頭內防波堤燈台，1963年移設於此），與遠處航道上的紅燈台遙相呼應。",
+                "船側緊鄰的海域亦是橫濱市與JFE鋼鐵合作推動「豐饒之海」海洋生態修復的示範海區，透過在海底鋪設煉鋼爐渣生態基材，讓海蛞蝓、海星、海參與蝦虎魚重歸都市港灣。"
+              ]
+            },
+            culture: {
+              label: "人文風情",
+              subtitle: "昭和黃金航海時代的裝飾藝術印記",
+              highlights: [
+                { k: "內裝風格", v: "法國 Art Deco 裝飾藝術" },
+                { k: "著名旅客", v: "查理·卓別林等政商名流" },
+                { k: "時代精神", v: "東西方跨洋交流的活化石" }
+              ],
+              paragraphs: [
+                "1930年代正值跨太平洋郵輪的黃金歲月，冰川丸的一等公共空間由法國設計師主導，融入濃郁的裝飾藝術（Art Deco）美學：溫潤胡桃木壁板、細緻雕飾、彩色鑲嵌玻璃花窗以及綴有NYK徽記的骨瓷茶具，勾勒出當年名流雅士渡洋漫遊的優雅日常。",
+                "冰川丸亦承載著超越商貿的人道與歷史溫度。二戰前夕，它曾護送大批經日本前往北美的猶太難民；戰時作為白底綠十字醫院船救治傷患；戰後又接載無數離鄉僑民歸國。展廳終章那句「願永遠成為世人所愛之船」，正是橫濱市民對這艘老船最深情的告白。"
+              ]
+            },
+            landscape: {
+              label: "建築與景觀",
+              subtitle: "黑船紅線與港灣霧色交織的經典剪影",
+              highlights: [
+                { k: "船身配色", v: "漆黑船殼 · 朱紅吃水線" },
+                { k: "經典視角", v: "船首錨鏈 · 左舷散步甲板" },
+                { k: "必賞細節", v: "1/100船模 · 船長室銅鎖" }
+              ],
+              paragraphs: [
+                "冰川丸擁有極具辨識度的古典郵輪比例：漆黑沉穩的鉚接鋼製船身、一抹朱紅色水線、潔白階梯式上層建築，以及黑底雙紅白環紋的日本郵船標誌性煙囪。粗壯鐵錨鏈自船首斜拉入微瀾海水，構成山下公園最具代表性的海事風景。",
+                "登上船橋俯瞰對稱舒展的前甲板與土黃色高聳前桅，視野直抵港灣浮吊與遠方工業天際線；步入木板鋪就的露天散步甲板（Promenade Deck），復古的「LIFE BOAT No.1」銘牌、鮮紅消防箱、舷外串燈與海灣大橋同框，隨手一幀皆是電影般的航海質感。"
+              ]
+            }
+          },
+          photos: [
+            {
+              id: "hikawamaru-02",
+              src: "photos/hikawamaru/hikawamaru_02_IMG_1622.jpg",
+              orientation: "landscape",
+              time: "15:54",
+              title: "冰川丸號船首全景與錨鏈",
+              caption:
+                "自山下公園棧橋正面仰望「日本郵船冰川丸」。漆黑船身鐫刻著「氷川丸 横浜 · HIKAWA MARU YOKOHAMA」字樣，厚重鐵鏈斜曳入波光微漾的港灣，右側遠景隱約可見橫濱海灣大橋的潔白橋塔。"
+            },
+            {
+              id: "hikawamaru-01",
+              src: "photos/hikawamaru/hikawamaru_01_IMG_1618.jpg",
+              orientation: "landscape",
+              time: "15:54",
+              title: "「豐饒之海」海域生態修復解說牌",
+              caption:
+                "立於山下公園臨海欄杆畔的圖文銘牌，記錄了橫濱市與JFE鋼鐵（2013—2018年）將煉鋼爐渣基材沉放於冰川丸旁海底、營造水深約3公尺淺灘棲息地的官民合作計畫。底部實拍圖展示了重返橫濱港的海蛞蝓、海星、海參與蝦虎魚。"
+            },
+            {
+              id: "hikawamaru-03",
+              src: "photos/hikawamaru/hikawamaru_03_IMG_1637.jpg",
+              orientation: "portrait",
+              time: "16:10",
+              title: "一等客室 · 1930年代跨洋臥艙",
+              caption:
+                "展區第6號「一等客室（First-class Cabin）」。艙內還原了昭和初期頭等艙旅客的起居空間：淡雅碎花布藝沙發、雙扇方窗、陶瓷盥洗台與圓形梳妝鏡，在柔和壁燈下流露出溫潤典雅的舊日風情。"
+            },
+            {
+              id: "hikawamaru-04",
+              src: "photos/hikawamaru/hikawamaru_04_IMG_1638.jpg",
+              orientation: "portrait",
+              time: "16:10",
+              title: "一等社交室與彩繪鸚鵡花窗",
+              caption:
+                "胡桃木精雕護牆板搭配流蘇織錦桌布，桌上整齊擺放著帶有紅色標誌的NYK瓷質咖啡杯，旁側復古皮箱上仍貼著船運標籤。最引人注目的是一對彩繪玻璃花窗，鮮紅與蔚藍羽翼的鸚鵡為厚重木室添上一抹南國生趣。"
+            },
+            {
+              id: "hikawamaru-05",
+              src: "photos/hikawamaru/hikawamaru_05_IMG_1668.jpg",
+              orientation: "portrait",
+              time: "16:14",
+              title: "船首甲板與高聳前桅遠眺",
+              caption:
+                "自上層甲板中軸俯瞰對稱鋪展的深灰船首甲板，暖橘色鋼鐵前桅直指微陰海天。遠處海面上停泊著天藍色海上起重浮吊，更遠方則是綿延的東京灣防波堤與橫濱港灣天際線。"
+            },
+            {
+              id: "hikawamaru-06",
+              src: "photos/hikawamaru/hikawamaru_06_IMG_1679.jpg",
+              orientation: "landscape",
+              time: "16:16",
+              title: "第9號「船長室」柚木舷門",
+              caption:
+                "白色鉚釘鋼壁上掛著「9 船長室 Captain's office」典雅銘牌，一旁斑駁深褐的實木厚門鑲嵌圓窗與黃銅鎖具，歷經近百年海風鹽霧洗禮，每一道漆痕都是遠洋歲月的見證。"
+            },
+            {
+              id: "hikawamaru-07",
+              src: "photos/hikawamaru/hikawamaru_07_IMG_1681.jpg",
+              orientation: "landscape",
+              time: "16:18",
+              title: "左舷露天散步甲板與海灣大橋",
+              caption:
+                "沿著微微泛舊的柚木條狀散步甲板前行，頭頂保留著斑駁的藍白「LIFE BOAT No.1」救生艇標示，腳邊是鮮紅色的「HOSE BOX」消防箱。憑欄外望，細雨薄霧中的橫濱海灣大橋靜靜橫臥水天之間。"
+            },
+            {
+              id: "hikawamaru-08",
+              src: "photos/hikawamaru/hikawamaru_08_IMG_1736.jpg",
+              orientation: "portrait",
+              time: "16:44",
+              title: "「願永為世人所愛之船」主題展牆",
+              caption:
+                "船內歷史展覽尾聲的寄語牆：「いつまでも愛され続ける船を目指して（To remain a ship ever loved by people…）」——跨越激盪時代的驚濤駭浪，冰川丸至今風姿依舊，繼續在誕生地橫濱與人們相伴同行。"
+            },
+            {
+              id: "hikawamaru-09",
+              src: "photos/hikawamaru/hikawamaru_09_IMG_1737.jpg",
+              orientation: "landscape",
+              time: "16:44",
+              title: "1/100 比例冰川丸精密大型模型",
+              caption:
+                "陳列於實船圓形舷窗前的1/100大比例模型，完整呈現了1930年竣工時的修長船型：漆黑船身、朱紅船底、黃色吊桿群與經典的黑底雙紅環煙囪，讓觀者得以一眼飽覽全船建築之美。"
+            },
+            {
+              id: "hikawamaru-10",
+              src: "photos/hikawamaru/hikawamaru_10_IMG_1740.jpg",
+              orientation: "portrait",
+              time: "16:45",
+              title: "百年「白燈台」與冰川丸船舷",
+              caption:
+                "下船回望棧橋盡頭，潔白八角錐形的「白燈台」靜立在冰川丸船側。銘牌載明其建於1896年（明治29年），原駐守山下碼頭內防波堤，1963年移設至此，昔日曾與冰川丸前方的「紅燈台」成對指引無數商船平安入港。"
+            }
+          ]
+        },
+
+        {
+          id: "port",
+          roman: "貳",
+          number: "02",
+          title: "橫濱港區 · 開港街區與煙火夜",
+          enTitle: "PORT OF YOKOHAMA",
+          jpTitle: "横浜港・山下公園通り・開港祭",
+          timeRange: "17:15 — 19:52",
+          locationTag: "山下公園通 · 海岸通 · 象鼻廣場",
+          summary:
+            "沿1859年橫濱開港的海岸線緩步西行：百年傳奇名宿、山百合出口秘史、震前唯一倖存的英國商館、腳下如詩的彩繪瓷磚畫與銅綠圓頂的「皇后之塔」次第展開；待6月2日開港紀念夜幕降臨，絢爛煙火在港灣雨夜凌空盛放。",
+          guide: {
+            history: {
+              label: "歷史沿革",
+              subtitle: "自1859年6月2日開啟日本近代化之門",
+              highlights: [
+                { k: "開港紀念日", v: "1859年6月2日（安政6年）" },
+                { k: "震前孤例", v: "舊英國七番館（1922年）" },
+                { k: "復興象徵", v: "新格蘭德飯店（1927年）" }
+              ],
+              paragraphs: [
+                "1859年6月2日，橫濱港正式開港通商，原本寧靜的臨海漁村迅速蛻變為日本面向世界的國際港口，沿海岸通與山下町形成繁華的外國人居留地與洋行商館街。",
+                "1923年9月1日關東大地震令橫濱化作一片瓦礫，唯獨1922年落成的巴特菲爾德與斯懷爾洋行橫濱分店——「舊英國七番館」屹立未倒，成為海岸通唯一存世的震前外國商館建築。",
+                "震後橫濱以驚人魄力重塑港城：1927年由建築師渡邊仁設計的「Hotel New Grand」成為國際化復興地標；1934年「橫濱稅關本館（皇后之塔）」竣工。每年6月2日，橫濱市民以盛大的「橫濱開港祭」與海上花火紀念這座港口的誕生。"
+              ]
+            },
+            geography: {
+              label: "地理位置",
+              subtitle: "串聯山手、海岸通與新港的黃金臨海走廊",
+              highlights: [
+                { k: "步行路線", v: "山下公園 → 海岸通 → 象鼻公園" },
+                { k: "港灣特徵", v: "天然深水良港 · 填海新港交會" },
+                { k: "城市格局", v: "古典開港街區銜接港未來21" }
+              ],
+              paragraphs: [
+                "本輯鏡頭記錄的港區漫步路線，正沿著橫濱最具歷史縱深感的臨海動脈展開：以山下公園通為起點，向西北經由舊外國人居留地（山下町、海岸通），抵達開港發祥地「象鼻公園（象の鼻パーク）」與橫濱稅關。",
+                "這一帶地勢平坦開闊，左側保留著明治大正時期的石砌洋樓與銀杏行道樹，右側則直面大棧橋、新港埠頭與港未來21的現代摩天群，步移景換間，恰是橫濱160餘年城市地理演進的立體長卷。"
+              ]
+            },
+            culture: {
+              label: "人文風情",
+              subtitle: "山百合、西洋料理、老電車與和平之聲",
+              highlights: [
+                { k: "花卉貿易", v: "山百合種球遠銷歐美" },
+                { k: "飲食名片", v: "日式拿坡里義大利麵與焗飯發源地" },
+                { k: "和平地標", v: "戶田平和紀念館（原水爆禁止宣言）" }
+              ],
+              paragraphs: [
+                "開港不僅帶來商船，更催生了獨樹一幟的「橫濱文化」：明治時期經橫濱港大量出口歐美的日本原產山百合（ヤマユリ），與西方園藝雜交培育出風靡全球的名花「卡薩布蘭卡」；矗立公園對面的 Hotel New Grand 不僅曾接待麥克阿瑟與卓別林，更是日式拿坡里義大利麵、海鮮焗飯與經典布丁聖代的誕生地。",
+                "低頭細看海岸通花崗岩步道，每隔數步便鑲嵌著精美的手繪陶瓷方磚，將103號橫濱市電、開港馬車、水手望遠鏡、江戶通行札與橫濱市花玫瑰定格於步履之間；而舊英國七番館則於1979年闢為「戶田平和紀念館」，銘記1957年於橫濱發表的禁止核武器宣言，以免費和平展覽面向世界。"
+              ]
+            },
+            landscape: {
+              label: "建築與景觀",
+              subtitle: "橫濱三塔之「皇后」與開港祭絢爛花火",
+              highlights: [
+                { k: "建築亮點", v: "伊斯蘭風銅綠圓頂「皇后之塔」" },
+                { k: "街區肌理", v: "古典紅磚洋館 × 現代玻璃帷幕" },
+                { k: "節慶奇景", v: "6月2日 橫濱開港祭雨夜煙火" }
+              ],
+              paragraphs: [
+                "港區街景最迷人之處，在於折衷主義古典建築與當代海濱天際線的從容共生：純白石面配緋紅遮陽篷的 Hotel New Grand、紅磚灰石相間的舊英國七番館，以及高達51公尺、頭戴銅綠色圓頂的橫濱稅關「皇后之塔」（與神奈川縣廳「國王」、開港紀念會館「傑克」合稱橫濱三塔），共同勾勒出優雅的港灣輪廓。",
+                "恰逢6月2日橫濱開港紀念日夜晚，細雨微潤的街道成為最浪漫的觀禮席——翡翠、緋紅與燦金色的巨大菊花煙火接連在港濱高樓與紅磚輪廓上空綻放，行人撐著透明雨傘駐足仰望，為整場海濱旅程畫下璀璨句點。"
+              ]
+            }
+          },
+          photos: [
+            {
+              id: "port-01",
+              src: "photos/port/port_01_IMG_1745.jpg",
+              orientation: "landscape",
+              time: "17:15",
+              title: "橫濱傳奇地標：新格蘭德飯店（Hotel New Grand）",
+              caption:
+                "1927年落成的新格蘭德飯店本館靜立於山下公園通轉角，乳白石砌立面點綴著弧形長窗與緋紅色遮陽篷，綠意盎然的銀杏樹掩映其間，身後高聳的現代塔樓新館與之形成跨越近百年的建築對話。"
+            },
+            {
+              id: "port-02",
+              src: "photos/port/port_02_IMG_1751.jpg",
+              orientation: "landscape",
+              time: "17:18",
+              title: "「百合與橫濱開港的歷史」紀念碑",
+              caption:
+                "山下公園通綠蔭間的黑色石碑，印有1899年橫濱植木株式會社外銷英文圖錄《LILIES OF JAPAN》的彩繪封面。銘文講述了日本原產山百合（神奈川縣花）當年作為僅次於生絲與茶葉的重要出口品，自橫濱港飄洋過海並孕育出世界名花卡薩布蘭卡的傳奇。"
+            },
+            {
+              id: "port-03",
+              src: "photos/port/port_03_IMG_1754.jpg",
+              orientation: "portrait",
+              time: "17:20",
+              title: "海岸通彩繪瓷磚畫（一）：開港風情",
+              caption:
+                "鑲嵌於微濕花崗岩人行道中的九宮格手繪瓷磚，細膩描繪了明治開港時期馳騁街頭的復古馬車、漫步洋館前的西洋紳士淑女、乘風帆船以及橫濱三塔建築剪影。"
+            },
+            {
+              id: "port-09",
+              src: "photos/port/port_09_IMG_5763.jpg",
+              orientation: "portrait",
+              time: "17:21",
+              title: "海岸通彩繪瓷磚畫（二）：港灣與紅磚記憶",
+              caption:
+                "藍白與赭黃交織的另一組九宮格步道瓷磚：既有破浪而行的港灣作業船、海鷗與103號復古市電，也有紅磚拱窗建築與燈塔圓徽，將橫濱的海洋性格娓娓道來。"
+            },
+            {
+              id: "port-04",
+              src: "photos/port/port_04_IMG_1760.jpg",
+              orientation: "portrait",
+              time: "17:22",
+              title: "舊英國七番館（戶田平和紀念館）立面",
+              caption:
+                "建於1922年左右的紅磚與雕花灰石洋樓，原為英國商社巴特菲爾德與斯懷爾的橫濱支店。門柱上仍清晰刻有居留地編號「No.7」，它是1923年關東大地震後海岸通唯一倖存的震前外國商館。"
+            },
+            {
+              id: "port-10",
+              src: "photos/port/port_10_IMG_5765.jpg",
+              orientation: "portrait",
+              time: "17:22",
+              title: "舊商館石階與深藍正門特寫",
+              caption:
+                "拾級而上的花崗岩石階通向沉穩的深藍色雙開大門，石雕弧形門楣刻著花環徽記與「TODA PEACE MEMORIAL HALL」，門框橫樑上更留存著「ESTABLISHED IN JAPAN 1867」的歷史銘刻。"
+            },
+            {
+              id: "port-05",
+              src: "photos/port/port_05_IMG_1761.jpg",
+              orientation: "landscape",
+              time: "17:22",
+              title: "戶田平和紀念館與舊英國七番館由來碑",
+              caption:
+                "綠底金框的日英雙語解說牌，左側簡述1957年9月8日戶田城聖於橫濱發表「原水爆禁止宣言」的和平淵源，右側附有一幀珍貴黑白老照片，重現百年前英國七番館的原貌。"
+            },
+            {
+              id: "port-11",
+              src: "photos/port/port_11_IMG_5780.jpg",
+              orientation: "landscape",
+              time: "17:23",
+              title: "橫濱歷史見證：戶田平和紀念館導覽展板",
+              caption:
+                "庭前圖文展板詳述了這棟橫濱市認定「歷史性建築物」的前世今生——並置展示1922年建館時的海岸通街景、1923年關東大地震後的橫濱實景與今日典雅重生的和平文化空間。"
+            },
+            {
+              id: "port-06",
+              src: "photos/port/port_06_IMG_1766.jpg",
+              orientation: "portrait",
+              time: "17:24",
+              title: "橫濱市電 103 號單磚小品",
+              caption:
+                "在深灰石板間獨具巧思的一枚鈷藍線描瓷磚，輕巧勾勒出舊時穿梭橫濱港區的「103號」有軌電車，宛如散落於城市腳下的懷舊郵票。"
+            },
+            {
+              id: "port-12",
+              src: "photos/port/port_12_IMG_5781.jpg",
+              orientation: "portrait",
+              time: "17:24",
+              title: "海岸通彩繪瓷磚畫（三）：水手與通行札",
+              caption:
+                "中央瓷磚畫著一名舉起望遠鏡遠眺的水手，四周環繞著橫濱港灣鳥瞰圖、舊式提燈、雙輪馬車與寫有「通行札」字樣的幕末開港時期關口木牌，趣味盎然。"
+            },
+            {
+              id: "port-13",
+              src: "photos/port/port_13_IMG_5783.jpg",
+              orientation: "portrait",
+              time: "17:25",
+              title: "海岸通彩繪瓷磚畫（四）：市花玫瑰與星夜燈塔",
+              caption:
+                "湛藍底色上盛放著一朵純白玫瑰（橫濱市花），四角則是漆黑星夜下劃破海浪的燈塔光束，下方繪有吹泡泡的少女與港口風景剪影，滿載海港童話色彩。"
+            },
+            {
+              id: "port-07",
+              src: "photos/port/port_07_IMG_1778.jpg",
+              orientation: "landscape",
+              time: "17:40",
+              title: "橫濱稅關本館「皇后之塔」廣場遠景",
+              caption:
+                "穿越象鼻廣場望向1934年落成的橫濱稅關本館。米色瓷磚外牆搭配成排拱窗，優雅的伊斯蘭風格銅綠色圓頂高聳天際，被市民親切喚作「皇后之塔（Queen's Tower）」，與周圍現代玻璃大樓和諧共處。"
+            },
+            {
+              id: "port-08",
+              src: "photos/port/port_08_IMG_1784.jpg",
+              orientation: "landscape",
+              time: "17:42",
+              title: "臨港步道視角下的「皇后之塔」",
+              caption:
+                "步上連接新港區域的臨海高架步道回望，橫濱稅關的對稱立面與精巧塔頂更為清晰，在初夏微陰的銀灰天幕下顯得莊重而帶有異域浪漫氣息。"
+            },
+            {
+              id: "port-14",
+              src: "photos/port/port_14_IMG_5820.jpg",
+              orientation: "portrait",
+              time: "19:38",
+              title: "開港紀念夜：港濱樓宇間的初綻花火",
+              caption:
+                "6月2日橫濱開港祭夜幕低垂，第一波晶瑩煙火悄然升起於新港濱海飯店俐落的現代建築網格之後，暖黃窗燈與銀白星火交相輝映。"
+            },
+            {
+              id: "port-15",
+              src: "photos/port/port_15_IMG_5822.jpg",
+              orientation: "portrait",
+              time: "19:51",
+              title: "細雨開港祭：翡翠煙花照亮夜街",
+              caption:
+                "夜雨微涼卻難掩慶典熱忱——一朵綴著紅蕊的翠綠色焰火在紅磚建築群與翠綠行道樹上空轟然綻開，斑馬線旁撐著透明傘的遊人與騎行者紛紛駐足仰望。"
+            },
+            {
+              id: "port-16",
+              src: "photos/port/port_16_IMG_5823.jpg",
+              orientation: "portrait",
+              time: "19:51",
+              title: "紅綠雙花輝映橫濱港夜空",
+              caption:
+                "緋紅與銀綠兩束禮花在港灣上空同時盛放，火光映亮了遠方紅磚牆的溫暖燈窗與潮濕街面，記錄下橫濱開港紀念日最動人的城市瞬間。"
+            },
+            {
+              id: "port-17",
+              src: "photos/port/port_17_IMG_5825.jpg",
+              orientation: "portrait",
+              time: "19:52",
+              title: "金菊滿天：橫濱開港祭壓軸華章",
+              caption:
+                "兩朵燦爛奪目的金色大菊焰火鋪滿深邃夜穹，璀璨流光垂落於海濱綠樹與紅磚燈火之上，為這場6月2日的橫濱漫遊獻上最華麗難忘的終章。"
+            }
+          ]
+        },
+
+        {
+          id: "redbrick",
+          roman: "參",
+          number: "03",
+          title: "橫濱紅磚倉庫",
+          enTitle: "YOKOHAMA RED BRICK WAREHOUSE",
+          jpTitle: "横浜赤レンガ倉庫",
+          timeRange: "17:52 — 18:18",
+          locationTag: "新港埠頭 · 一、二號館",
+          summary:
+            "屹立於新港埠頭的明治時期國家保稅倉庫，百年紅磚外牆見證海陸貿易風雲，如今化身為藝術展覽、節慶廣場與海派甜點咖啡館雲集的文化地標；門前更迎來面向2027橫濱國際園藝博覽會的鮮活新意。",
+          guide: {
+            history: {
+              label: "歷史沿革",
+              subtitle: "百年明治保稅倉庫的優雅新生",
+              highlights: [
+                { k: "竣工年份", v: "2號館 1911年 · 1號館 1913年" },
+                { k: "總建築師", v: "妻木賴黃（明治建築巨匠）" },
+                { k: "文化重生", v: "2002年 活化為文化商業空間" }
+              ],
+              paragraphs: [
+                "橫濱紅磚倉庫原為明治政府大藏省臨時建築部興建的模範保稅倉庫，由日本近代建築巨匠妻木賴黃主持設計。2號館竣工於1911年（明治44年），1號館竣工於1913年（大正2年），當年配置了日本最早期的貨物電梯、避雷針與防火鐵門，代表了明治末期建築工程的巔峰水準。",
+                "1923年關東大地震導致1號館約半數損毀，經修復後縮減為現今規模。二戰後曾由盟軍接管至1956年，隨後持續作為港口保稅庫房運作至1989年。經橫濱市以「保存並活化歷史遺產」理念精心修繕，紅磚倉庫於2002年華麗轉型為結合劇場展廳、創意選物與海景餐飲的城市客廳。"
+              ]
+            },
+            geography: {
+              label: "地理位置",
+              subtitle: "三面環海的新港埠頭視覺焦點",
+              highlights: [
+                { k: "所在方位", v: "橫濱市中區新港1丁目" },
+                { k: "臨海格局", v: "南鄰象鼻公園 · 北接港未來21" },
+                { k: "景深軸線", v: "廣場中軸直望橫濱海灣大橋" }
+              ],
+              paragraphs: [
+                "紅磚倉庫坐落於明治末年填海建成的新港埠頭人工島上，三面環繞東京灣碧波，地理位置得天獨厚。向南經由山下臨港線空中步道可直達象鼻公園與山下公園，向北則無縫銜接橫濱大摩天輪與港未來21核心商圈。",
+                "1號館與2號館平行排布，中間留出極為寬闊的石板活動廣場，形成一條直通大海的視覺走廊——站在廣場中央東望，大棧橋流線型綠丘與橫濱海灣大橋的雙塔剪影恰好落於紅磚建築群正中。"
+              ]
+            },
+            culture: {
+              label: "人文風情",
+              subtitle: "從海派午後茶到 GREEN×EXPO 2027",
+              highlights: [
+                { k: "空間分工", v: "1號館文化藝術 · 2號館生活美食" },
+                { k: "館內茶歇", v: "à la campagne 法式水果塔名店" },
+                { k: "未來展望", v: "2027 橫濱國際園藝博覽會" }
+              ],
+              paragraphs: [
+                "如今的紅磚倉庫將歷史肌理與當代生活氣息融為一體：1號館以音樂廳與多元藝術展演空間為主，2號館則匯聚了橫濱原創雜貨、復古飾品與特色餐廳。源自神戶的人氣甜點咖啡館「à la campagne」便落戶於此，質樸木桌、鼠尾草綠釉瓷盤與當季新鮮櫻桃莓果塔，正是橫濱洋風午後茶文化的絕佳縮影。",
+                "紅磚外牆前矗立著「GREEN×EXPO 2027（2027年橫濱國際園藝博覽會）」的彩色地球吉祥物「Tunku Tunku（トゥンクトゥンク）」雕塑，鮮亮的花卉生態彩繪與沉穩紅磚形成奇妙共振，訴說著橫濱從近代商港走向永續花園城市的未來願景。"
+              ]
+            },
+            landscape: {
+              label: "建築與景觀",
+              subtitle: "紅磚拱券、鐵製繫樑與舊日臨港鐵軌",
+              highlights: [
+                { k: "建築工法", v: "深紅磚砌 · 內部鐵骨補強" },
+                { k: "細部看點", v: "粉鏽色鐵樑帶 · 拱形深窗" },
+                { k: "歷史印記", v: "廣場石面保留舊臨港鐵道" }
+              ],
+              paragraphs: [
+                "兩座三層紅磚建築以規整沉厚的量體分列廣場左右，外牆清晰可見為抗震而設的水平鐵製加固繫樑（現漆為柔和淡絳色）以及深邃典雅的弧形磚拱窗洞；面向廣場的一側加建了輕盈透明的玻璃連廊，在古樸與通透之間取得絕佳平衡。",
+                "漫步寬敞的石板廣場，腳下仍清晰嵌有昔日連接橫濱港站與新港碼頭的臨港鐵路雙軌。即便在初夏細雨薄霧之中，微濕石板映襯著溫厚紅磚與遠處霧靄中的海灣大橋，更顯寧靜大方的港城韻味。"
+              ]
+            }
+          },
+          photos: [
+            {
+              id: "redbrick-01",
+              src: "photos/redbrick/redbrick_01_IMG_1792.jpg",
+              orientation: "landscape",
+              time: "17:52",
+              title: "紅磚倉庫廣場與海灣大橋中軸遠景",
+              caption:
+                "站在橫濱紅磚倉庫寬闊的石板廣場中央極目遠眺，左側二號館與右側一號館如兩道百年紅磚長廊對稱延展，腳下仍留有舊臨港鐵路的鐵軌痕跡；目光盡頭，大棧橋與橫濱海灣大橋的雙塔在薄霧中若隱若現。"
+            },
+            {
+              id: "redbrick-02",
+              src: "photos/redbrick/redbrick_02_IMG_1794.jpg",
+              orientation: "portrait",
+              time: "17:52",
+              title: "紅磚古牆與 GREEN×EXPO 2027 吉祥物雕塑",
+              caption:
+                "厚重的明治紅磚外牆與淡絳色鐵製加固樑帶前，矗立著「GREEN×EXPO 2027 YOKOHAMA JAPAN」官方吉祥物「Tunku Tunku」彩繪地球雕塑——躍動的明黃雙足與繁花綠意地球，為百年歷史建築注入面向未來的明快活力。"
+            },
+            {
+              id: "redbrick-03",
+              src: "photos/redbrick/redbrick_03_IMG_5796.jpg",
+              orientation: "portrait",
+              time: "18:07",
+              title: "紅磚館內茶歇：暖黃陶杯醇香奶茶",
+              caption:
+                "避開海濱微雨，步入紅磚倉庫二號館內人氣南法風甜點店「à la campagne」小憩。溫潤芥末黃手工陶杯盛滿香濃奶茶，搭配同色奶盅、墨綠糖罐與捲尾復古銀匙，在原木桌面上散發著療癒暖意。"
+            },
+            {
+              id: "redbrick-04",
+              src: "photos/redbrick/redbrick_04_IMG_5811.jpg",
+              orientation: "portrait",
+              time: "18:12",
+              title: "法式莓果烤布蕾塔（à la campagne）",
+              caption:
+                "手寫體店名「à la campagne」點綴在溫雅的鼠尾草綠釉瓷盤邊緣，一角金黃烤布蕾塔鑲嵌著飽滿酸甜的紅莓果粒，酥脆塔皮與綿密蛋奶餡相得益彰。"
+            },
+            {
+              id: "redbrick-05",
+              src: "photos/redbrick/redbrick_05_IMG_5812.jpg",
+              orientation: "portrait",
+              time: "18:12",
+              title: "初夏限定：深紅櫻桃可可酥塔",
+              caption:
+                "四顆飽滿亮澤的帶蒂深紅櫻桃如寶石般簇擁於輕盈鮮奶油與香濃巧克力塔皮之上，酸甜果香與微苦可可交織，恰是6月初夏橫濱海港午後最令人愉悅的味覺記憶。"
+            },
+            {
+              id: "redbrick-06",
+              src: "photos/redbrick/redbrick_06_IMG_5818.jpg",
+              orientation: "portrait",
+              time: "18:18",
+              title: "薄荷檸檬冰果茶與窗畔蕨綠",
+              caption:
+                "深藍海風杯墊上靜置著一杯琥珀橘漸層的冰鎮柑橘果茶，新鮮黃檸檬片與嫩綠薄荷葉漂浮其間，背景一簇蒼翠蕨葉在柔和燈光下舒展，為即將到來的開港祭花火之夜蓄滿清涼愜意。"
+            }
+          ]
+        }
+      ]
+    };
+
+    (function () {
+      const TOPICS = [
+        {
+          key: "history",
+          label: "歷史沿革",
+          icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg>`
+        },
+        {
+          key: "geography",
+          label: "地理位置",
+          icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>`
+        },
+        {
+          key: "culture",
+          label: "人文風情",
+          icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>`
+        },
+        {
+          key: "landscape",
+          label: "建築與景觀",
+          icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18c2-1.5 4-1.5 6 0s4 1.5 6 0 4-1.5 6 0"/><path d="M2 13c2-1.5 4-1.5 6 0s4 1.5 6 0 4-1.5 6 0"/><path d="M12 3v6"/><path d="M8 7l4-4 4 4"/></svg>`
+        }
+      ];
+
+      const ALL_PHOTOS = [];
+      YOKOHAMA_DATA.sections.forEach((sec) => {
+        sec.photos.forEach((photo, idx) => {
+          ALL_PHOTOS.push({
+            ...photo,
+            sectionId: sec.id,
+            sectionTitle: sec.title,
+            sectionNumber: sec.number,
+            indexInSection: idx + 1,
+            sectionTotal: sec.photos.length,
+            globalIndex: ALL_PHOTOS.length
+          });
+        });
+      });
+
+      let currentGuideSectionId = YOKOHAMA_DATA.sections[0].id;
+      let currentGuideTopic = "history";
+      let currentLightboxIndex = 0;
+
+      function renderOverview() {
+        const container = document.getElementById("overview-grid");
+        if (!container) return;
+        container.innerHTML = YOKOHAMA_DATA.sections
+          .map(
+            (sec) => `
+            <article class="overview-card">
+              <div>
+                <div class="overview-card-top">
+                  <span class="overview-num">CHAPTER ${sec.number} · ${sec.roman}</span>
+                  <span class="overview-count">${sec.photos.length} 幀實拍</span>
+                </div>
+                <h3>${sec.title}</h3>
+                <p class="overview-card-sub">${sec.jpTitle}</p>
+                <p class="overview-card-desc">${sec.summary}</p>
+              </div>
+              <div class="overview-card-actions">
+                <a href="#section-${sec.id}" class="mini-action-btn">瀏覽照片</a>
+                <button type="button" class="mini-action-btn primary" data-open-guide="${sec.id}" data-topic="history">
+                  歷史·地理·人文·景觀
+                </button>
+              </div>
+            </article>
+          `
+          )
+          .join("");
+      }
+
+      function photoCardHTML(photo, isFeatured) {
+        const numLabel = `${String(photo.indexInSection).padStart(2, "0")} / ${String(photo.sectionTotal).padStart(2, "0")}`;
+        return `
+          <figure class="photo-card ${isFeatured ? "is-featured" : ""}" data-photo-index="${photo.globalIndex}">
+            <div class="photo-frame" data-open-lightbox="${photo.globalIndex}" role="button" tabindex="0" aria-label="檢視大圖：${photo.title}">
+              <img src="${photo.src}" alt="${photo.title}" loading="${photo.globalIndex < 3 ? "eager" : "lazy"}" />
+              <span class="photo-time-pill">${photo.time}</span>
+              <span class="photo-zoom-badge">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                賞閱大圖
+              </span>
+            </div>
+            <figcaption class="photo-body">
+              <div class="photo-index">
+                <span>FIG. ${numLabel}</span>
+                <span>${photo.orientation === "portrait" ? "直幅" : "橫幅"}</span>
+              </div>
+              <h3 class="photo-title">${photo.title}</h3>
+              <p class="photo-caption">${photo.caption}</p>
+            </figcaption>
+          </figure>
+        `;
+      }
+
+      function renderChapters() {
+        const main = document.getElementById("chapters-root");
+        if (!main) return;
+        main.innerHTML = YOKOHAMA_DATA.sections
+          .map((sec, sIdx) => {
+            const secPhotos = ALL_PHOTOS.filter((p) => p.sectionId === sec.id);
+            const leadPhoto = secPhotos[0];
+            const restPhotos = secPhotos.slice(1);
+
+            const divider =
+              sIdx > 0
+                ? `
+              <div class="chapter-divider" aria-hidden="true">
+                <span class="chapter-divider-line"></span>
+                <svg width="46" height="14" viewBox="0 0 46 14" fill="none" stroke="currentColor" stroke-width="1.3">
+                  <path d="M1 7c4-4 8-4 12 0s8 4 12 0 8-4 12 0 6 3 8 1"/>
+                </svg>
+                <span class="chapter-divider-line"></span>
+              </div>`
+                : "";
+
+            const topicButtonsHTML = TOPICS.map(
+              (t) => `
+              <button type="button" class="guide-topic-btn" data-open-guide="${sec.id}" data-topic="${t.key}">
+                ${t.icon}
+                <span>${t.label}</span>
+              </button>
+            `
+            ).join("");
+
+            return `
+              ${divider}
+              <section class="chapter-section" id="section-${sec.id}" data-section-id="${sec.id}">
+                <header class="chapter-header">
+                  <div>
+                    <div class="chapter-kicker">CHAPTER ${sec.number} · ${sec.enTitle}</div>
+                    <h2 class="chapter-title">${sec.title}</h2>
+                    <p class="chapter-jp">${sec.jpTitle}</p>
+                    <p class="chapter-summary">${sec.summary}</p>
+                  </div>
+                  <div class="chapter-meta-box">
+                    <strong>${sec.locationTag}</strong>
+                    <span>拍攝時段 ${sec.timeRange}</span><br />
+                    <span>共收錄 ${secPhotos.length} 幀攝影作品</span>
+                  </div>
+                </header>
+
+                <div class="guide-bar" role="region" aria-label="${sec.title}深度人文地理導覽">
+                  <div class="guide-bar-label">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B08A4E" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+                    <span>深度導覽 · 認識${sec.title.split(" · ")[0]}</span>
+                    <span class="sub-hint">點擊按鈕查閱專題介紹</span>
+                  </div>
+                  <div class="guide-btn-group">
+                    ${topicButtonsHTML}
+                  </div>
+                </div>
+
+                <div class="featured-photo-wrap">
+                  ${photoCardHTML(leadPhoto, true)}
+                </div>
+
+                <div class="photo-masonry">
+                  ${restPhotos.map((p) => photoCardHTML(p, false)).join("")}
+                </div>
+              </section>
+            `;
+          })
+          .join("");
+      }
+
+      const guideBackdrop = document.getElementById("guide-backdrop");
+      const guideTitleEl = document.getElementById("guide-modal-title");
+      const guideJpEl = document.getElementById("guide-modal-jp");
+      const guideKickerEl = document.getElementById("guide-modal-kicker");
+      const guidePlaceSwitcherEl = document.getElementById("modal-place-switcher");
+      const guideTabsEl = document.getElementById("guide-tabs");
+      const guideBodyEl = document.getElementById("guide-modal-body");
+
+      function renderGuideModalContent() {
+        const sec = YOKOHAMA_DATA.sections.find((s) => s.id === currentGuideSectionId);
+        if (!sec) return;
+        const topicData = sec.guide[currentGuideTopic];
+
+        guideKickerEl.textContent = `CHAPTER ${sec.number} · ${sec.enTitle}`;
+        guideTitleEl.textContent = sec.title;
+        guideJpEl.textContent = `${sec.jpTitle} · ${sec.locationTag}`;
+
+        guidePlaceSwitcherEl.innerHTML = YOKOHAMA_DATA.sections
+          .map(
+            (s) => `
+            <button type="button" class="place-switch-pill ${s.id === sec.id ? "active" : ""}" data-switch-place="${s.id}">
+              ${s.roman} · ${s.title.split(" · ")[0]}
+            </button>
+          `
+          )
+          .join("");
+
+        guideTabsEl.innerHTML = TOPICS.map(
+          (t) => `
+          <button type="button" class="guide-tab ${t.key === currentGuideTopic ? "active" : ""}" data-switch-topic="${t.key}">
+            ${t.icon}
+            <span>${t.label}</span>
+          </button>
+        `
+        ).join("");
+
+        guideBodyEl.innerHTML = `
+          <h4 class="guide-topic-heading">${topicData.subtitle}</h4>
+          <div class="guide-highlights">
+            ${topicData.highlights
+              .map(
+                (h) => `
+              <div class="highlight-chip">
+                <div class="highlight-chip-k">${h.k}</div>
+                <div class="highlight-chip-v">${h.v}</div>
+              </div>
+            `
+              )
+              .join("")}
+          </div>
+          <div class="guide-paragraphs">
+            ${topicData.paragraphs.map((p) => `<p>${p}</p>`).join("")}
+          </div>
+        `;
+      }
+
+      function openGuideModal(sectionId, topicKey) {
+        currentGuideSectionId = sectionId || YOKOHAMA_DATA.sections[0].id;
+        currentGuideTopic = topicKey || "history";
+        renderGuideModalContent();
+        guideBackdrop.classList.add("open");
+        guideBackdrop.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeGuideModal() {
+        guideBackdrop.classList.remove("open");
+        guideBackdrop.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+
+      const lightboxEl = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      const lightboxCounter = document.getElementById("lightbox-counter");
+      const lightboxTag = document.getElementById("lightbox-tag");
+      const lightboxTitle = document.getElementById("lightbox-title");
+      const lightboxCaption = document.getElementById("lightbox-caption");
+      const lightboxTime = document.getElementById("lightbox-time");
+      const lightboxOrder = document.getElementById("lightbox-order");
+
+      function renderLightboxPhoto() {
+        const p = ALL_PHOTOS[currentLightboxIndex];
+        if (!p) return;
+        lightboxImg.src = p.src;
+        lightboxImg.alt = p.title;
+        lightboxCounter.textContent = `${p.sectionTitle}  ·  第 ${currentLightboxIndex + 1} / ${ALL_PHOTOS.length} 幀`;
+        lightboxTag.textContent = `CHAPTER ${p.sectionNumber} · ${p.sectionTitle}`;
+        lightboxTitle.textContent = p.title;
+        lightboxCaption.textContent = p.caption;
+        lightboxTime.textContent = `拍攝於 2026年6月2日 ${p.time}`;
+        lightboxOrder.textContent = `本章 ${p.indexInSection} / ${p.sectionTotal}`;
+      }
+
+      function openLightbox(index) {
+        currentLightboxIndex = (index + ALL_PHOTOS.length) % ALL_PHOTOS.length;
+        renderLightboxPhoto();
+        lightboxEl.classList.add("open");
+        lightboxEl.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeLightbox() {
+        lightboxEl.classList.remove("open");
+        lightboxEl.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+
+      function stepLightbox(delta) {
+        currentLightboxIndex = (currentLightboxIndex + delta + ALL_PHOTOS.length) % ALL_PHOTOS.length;
+        renderLightboxPhoto();
+      }
+
+      document.addEventListener("click", (e) => {
+        const guideBtn = e.target.closest("[data-open-guide]");
+        if (guideBtn) {
+          openGuideModal(guideBtn.dataset.openGuide, guideBtn.dataset.topic);
+          return;
+        }
+        const switchPlace = e.target.closest("[data-switch-place]");
+        if (switchPlace) {
+          currentGuideSectionId = switchPlace.dataset.switchPlace;
+          renderGuideModalContent();
+          return;
+        }
+        const switchTopic = e.target.closest("[data-switch-topic]");
+        if (switchTopic) {
+          currentGuideTopic = switchTopic.dataset.switchTopic;
+          renderGuideModalContent();
+          return;
+        }
+        const lbTrigger = e.target.closest("[data-open-lightbox]");
+        if (lbTrigger) {
+          openLightbox(parseInt(lbTrigger.dataset.openLightbox, 10));
+          return;
+        }
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          if (lightboxEl.classList.contains("open")) closeLightbox();
+          if (guideBackdrop.classList.contains("open")) closeGuideModal();
+        } else if (lightboxEl.classList.contains("open")) {
+          if (e.key === "ArrowRight") stepLightbox(1);
+          if (e.key === "ArrowLeft") stepLightbox(-1);
+        } else if (e.key === "Enter") {
+          const focused = document.activeElement;
+          if (focused && focused.dataset && focused.dataset.openLightbox !== undefined) {
+            openLightbox(parseInt(focused.dataset.openLightbox, 10));
+          }
+        }
+      });
+
+      document.getElementById("guide-close-btn").addEventListener("click", closeGuideModal);
+      guideBackdrop.addEventListener("click", (e) => {
+        if (e.target === guideBackdrop) closeGuideModal();
+      });
+
+      document.getElementById("lightbox-close-btn").addEventListener("click", closeLightbox);
+      document.getElementById("lightbox-prev").addEventListener("click", () => stepLightbox(-1));
+      document.getElementById("lightbox-next").addEventListener("click", () => stepLightbox(1));
+      lightboxEl.addEventListener("click", (e) => {
+        if (e.target === lightboxEl) closeLightbox();
+      });
+
+      const viewToggleBtn = document.getElementById("view-toggle-btn");
+      const viewToggleLabel = document.getElementById("view-toggle-label");
+      viewToggleBtn.addEventListener("click", () => {
+        const isGallery = document.body.classList.toggle("gallery-only");
+        viewToggleBtn.classList.toggle("is-gallery", isGallery);
+        viewToggleLabel.textContent = isGallery ? "切換圖文雅覽" : "純圖畫廊模式";
+      });
+
+      const siteNav = document.getElementById("site-nav");
+      const navLinks = Array.from(document.querySelectorAll(".nav-link[data-target]"));
+
+      function updateNavOnScroll() {
+        siteNav.classList.toggle("scrolled", window.scrollY > 24);
+        const scrollPos = window.scrollY + 140;
+        let activeId = "top";
+        YOKOHAMA_DATA.sections.forEach((sec) => {
+          const el = document.getElementById(`section-${sec.id}`);
+          if (el && el.offsetTop <= scrollPos) {
+            activeId = sec.id;
+          }
+        });
+        navLinks.forEach((link) => {
+          link.classList.toggle("active", link.dataset.target === activeId);
+        });
+      }
+
+      window.addEventListener("scroll", updateNavOnScroll, { passive: true });
+
+      renderOverview();
+      renderChapters();
+      updateNavOnScroll();
+    })();
+  </script>
+</body>
+</html>
