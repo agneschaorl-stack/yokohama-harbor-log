@@ -7,6 +7,17 @@
   <meta name="description" content="2026年6月2日橫濱開港紀念日實拍 33 幀影像與現場圖說，附冰川丸號、橫濱港區與開港祭花火、紅磚倉庫之歷史、地理、人文與景觀深度導覽。" />
   <link rel="canonical" href="https://agneschaorl-stack.github.io/yokohama-harbor-log/" />
 
+  <!-- App Icon / Favicon / Web App Manifest -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <meta name="theme-color" content="#0F273E" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="橫濱行旅" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
   <!-- Open Graph / Social Share Preview -->
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="zh_TW" />
@@ -133,10 +144,20 @@
       flex-shrink: 0;
     }
 
-    .nav-compass {
-      width: 26px;
-      height: 26px;
-      color: var(--ocean-main);
+    .nav-app-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      object-fit: cover;
+      flex-shrink: 0;
+      box-shadow: 0 3px 10px rgba(15, 39, 62, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .nav-brand:hover .nav-app-icon {
+      transform: translateY(-1px) scale(1.03);
+      box-shadow: 0 6px 14px rgba(15, 39, 62, 0.28);
     }
 
     .nav-brand-text {
@@ -1319,11 +1340,7 @@
   <nav class="site-nav" id="site-nav" aria-label="主導覽列">
     <div class="nav-inner">
       <a href="#top" class="nav-brand">
-        <svg class="nav-compass" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-          <circle cx="14" cy="14" r="11.5" />
-          <polygon points="18.6 9.4 15.8 15.8 9.4 18.6 12.2 12.2 18.6 9.4" fill="rgba(176,138,78,0.22)" />
-          <circle cx="14" cy="14" r="1.4" fill="currentColor" />
-        </svg>
+        <img class="nav-app-icon" src="icons/icon-192.png" alt="橫濱港行旅記圖示" width="34" height="34" />
         <span class="nav-brand-text">
           <span class="nav-brand-title">橫濱港行旅記</span>
           <span class="nav-brand-sub">YOKOHAMA HARBOR LOG</span>

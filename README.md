@@ -1,8 +1,12 @@
 # 橫濱港行旅記（Yokohama Harbor Log）
 
+<p align="left">
+  <img src="icons/icon-192.png" alt="橫濱港行旅記 App Icon" width="84" height="84" style="border-radius: 20px;" />
+</p>
+
 🌐 **線上網站**：https://agneschaorl-stack.github.io/yokohama-harbor-log/
 
-以橫濱開港紀念日（6月2日）實地拍攝的 33 幀攝影作品為核心，結合海洋風味與典雅排版打造的靜態攝影瀏覽網頁。
+以橫濱開港紀念日（6月2日）實地拍攝的 33 幀攝影作品為核心，結合海洋風味與典雅排版打造的靜態攝影瀏覽網頁。支援 iOS / Android「加入主畫面」安裝為專屬 App 圖示。
 
 ![橫濱港行旅記首頁預覽](og-preview.jpg)
 
