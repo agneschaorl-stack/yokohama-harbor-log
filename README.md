@@ -1,6 +1,12 @@
 # 橫濱港行旅記（Yokohama Harbor Log）
 
+🌐 **線上網站**：https://agneschaorl-stack.github.io/yokohama-harbor-log/
+
 以橫濱開港紀念日（6月2日）實地拍攝的 33 幀攝影作品為核心，結合海洋風味與典雅排版打造的靜態攝影瀏覽網頁。
+
+![橫濱港行旅記首頁預覽](og-preview.jpg)
+
+![橫濱港行旅記篇章與互動導覽預覽](preview-gallery.png)
 
 ## 內容篇章
 
